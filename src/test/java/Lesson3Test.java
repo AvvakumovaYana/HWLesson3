@@ -18,19 +18,22 @@ public class Lesson3Test {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+
         $("#firstName").setValue("Yana");
         $("#lastName").setValue("Avvakumova");
         $("#userEmail").setValue("test@mail.ru");
-        $(byText("Female")).click();
-        $("#userNumber").scrollTo().setValue("7987654321");
+        $("#genterWrapper").$(byText("Female")).click();
+        $("#userNumber").setValue("7987654321");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").find("[value='1993']").click();
         $(".react-datepicker__month-select").find("[value='6']").click();
         $(".react-datepicker__day--010").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
-        $(byText("Reading")).click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#uploadPicture").uploadFromClasspath("TestHW3.png");
-        $("#currentAddress").scrollTo().setValue("Test address");
+        $("#currentAddress").setValue("Test address");
         $("#state").click();
         $("#state").find(byText("NCR")).click();
         $("#city").click();
