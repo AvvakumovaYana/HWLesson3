@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TextBoxPage extends PageBase{
+public class TextBoxPage {
 
     private final SelenideElement userName = $("#userName");
     private final SelenideElement userEmailInput = $("#userEmail");
@@ -64,5 +64,10 @@ public class TextBoxPage extends PageBase{
     public TextBoxPage outputPermanentAddressCheck(String value) {
         outputPermanentAddress.shouldHave(text(value));
         return this;
+    }
+
+    private void removeBanners(){
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
     }
 }

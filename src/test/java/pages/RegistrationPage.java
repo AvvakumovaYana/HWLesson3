@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class RegistrationPage extends PageBase{
+public class RegistrationPage {
 
     private final SelenideElement fistNameInput = $("#firstName");
     private final SelenideElement lastNameInput = $("#lastName");
@@ -118,8 +118,14 @@ public class RegistrationPage extends PageBase{
                 .checkRow("State and City", stateAndCity);
         return this;
     }
+
     public RegistrationPage checkTableNotVisible(){
         tableResultComponent.checkTableNotVisible();
         return this;
+    }
+
+    private void removeBanners(){
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
     }
 }
