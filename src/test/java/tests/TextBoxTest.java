@@ -12,6 +12,7 @@ public class TextBoxTest extends TestBase {
     void fillFormTest() {
 
         textBoxTestObject.openPage()
+                .removeBanners()
                 .setUserNameInput("Alex")
                 .setUserEmailInput("alex@egorov.com")
                 .setAddressInput("Some street 1")

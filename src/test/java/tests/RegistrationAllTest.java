@@ -11,6 +11,7 @@ public class RegistrationAllTest extends TestBase {
     @Test
     void allFormFieldsTest() {
         registrationPage.openPage()
+                .removeBanners()
                 .setFistNameInput("Yana")
                 .setLastNameInput("Avvakumova")
                 .setUserEmailInput("test@mail.ru")
@@ -34,6 +35,7 @@ public class RegistrationAllTest extends TestBase {
     @Test
     void mainFormFieldsTest() {
         registrationPage.openPage()
+                .removeBanners()
                 .setFistNameInput("Yana")
                 .setLastNameInput("Avvakumova")
                 .setGenderInput("Female")
@@ -50,6 +52,7 @@ public class RegistrationAllTest extends TestBase {
     @Test
     void negativeFormFieldsTest() {
         registrationPage.openPage()
+                .removeBanners()
                 .setLastNameInput("Avvakumova")
                 .setGenderInput("Female")
                 .setNumberInput("7987654321")

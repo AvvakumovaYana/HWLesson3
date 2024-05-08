@@ -27,7 +27,12 @@ public class RegistrationPage {
 
     public RegistrationPage openPage(){
         open("/automation-practice-form");
-        removeBanners();
+        return this;
+    }
+
+    public RegistrationPage removeBanners(){
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return this;
     }
 
@@ -122,10 +127,5 @@ public class RegistrationPage {
     public RegistrationPage checkTableNotVisible(){
         tableResultComponent.checkTableNotVisible();
         return this;
-    }
-
-    private void removeBanners(){
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
     }
 }

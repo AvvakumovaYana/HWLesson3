@@ -22,6 +22,12 @@ public class TextBoxPage {
         return this;
     }
 
+    public TextBoxPage removeBanners(){
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+        return this;
+    }
+
     public TextBoxPage setUserNameInput(String value){
         userName.setValue(value);
         return this;
@@ -64,10 +70,5 @@ public class TextBoxPage {
     public TextBoxPage outputPermanentAddressCheck(String value) {
         outputPermanentAddress.shouldHave(text(value));
         return this;
-    }
-
-    private void removeBanners(){
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
     }
 }
